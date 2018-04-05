@@ -65,7 +65,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
             holder.khname.setText(listFiltered.get(position).khname);
             holder.phone.setText(listFiltered.get(position).phone);
 
-            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).photo);
+            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).image);
             try{
                 holder.logo.setImageURI(uri);
 
@@ -75,7 +75,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
         } else {
             holder.txtNameRow1.setText(listFiltered.get(position).engname+"--"+rowItem.get(position).type );
 
-            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).photo);
+            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).image);
             try{
                 holder.logo.setImageURI(uri);
 
