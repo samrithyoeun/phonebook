@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@drawable/card_border_color"
         android:padding="3dp"
         >
         <ImageView

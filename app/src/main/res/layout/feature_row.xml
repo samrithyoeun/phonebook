@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="3dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<android.support.v7.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardPreventCornerOverlap="true"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="10dp"
-
-
-    >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="@drawable/card_border_color"
+ <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/tools"
         android:padding="3dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        app:cardCornerRadius="14dp"
+        card_view:cardUseCompatPadding="true"
+
+        app:cardPreventCornerOverlap="true"
+
+        >
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
         >
         <ImageView
             android:layout_width="65dp"
@@ -43,6 +43,7 @@
                 android:id="@+id/khname"
                 android:textSize="20sp"
                 android:textColor="#000000"
+                android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 />
@@ -50,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Police Officer"
+                android:textStyle="bold"
                 android:id="@+id/engname"
                 android:textSize="18sp"
                 android:textColor="#000000"
@@ -60,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="855 10 200 300"
+                android:textStyle="bold"
                 android:id="@+id/phone"
                 android:textSize="18sp"
                 android:textColor="#000000"
@@ -68,6 +71,5 @@
                 />
         </LinearLayout>
     </LinearLayout>
-</android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
 
-</RelativeLayout>

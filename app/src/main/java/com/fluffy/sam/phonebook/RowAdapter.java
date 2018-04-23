@@ -12,6 +12,10 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fluffy.sam.phonebook.Contact;
+import com.fluffy.sam.phonebook.R;
+import com.fluffy.sam.phonebook.RowListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,11 +65,14 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
 
         final int itemType = getItemViewType(position);
         if (itemType == 0) {
-            holder.engname.setText(listFiltered.get(position).engname);
-            holder.khname.setText(listFiltered.get(position).khname);
-            holder.phone.setText(listFiltered.get(position).phone);
+            holder.engname.setText(listFiltered.get(position).getEngname());
+            holder.khname.setText(listFiltered.get(position).getKhname());
+            holder.phone.setText(listFiltered.get(position).getPhone());
 
-            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).image);
+            Uri uri = Uri.parse("android.resource://"
+                    +context.getPackageName()
+                    + "/drawable/"
+                    +listFiltered.get(position).getImage().replace(" ","").toLowerCase());
             try{
                 holder.logo.setImageURI(uri);
 
@@ -73,16 +80,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
                 e.printStackTrace();
             }
         } else {
-            holder.txtNameRow1.setText(listFiltered.get(position).engname+"--"+rowItem.get(position).type );
-
-            Uri uri = Uri.parse("android.resource://"+context.getPackageName()+"/drawable/"+listFiltered.get(position).image);
-            try{
-                holder.logo.setImageURI(uri);
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
+            holder.txtNameRow1.setText(listFiltered.get(position).getEngname()+"--"+rowItem.get(position).getType() );
         }
 
 
@@ -106,10 +104,10 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
                 } else {
                     List<Contact> filteredList = new ArrayList<>();
                     for(int i =0;i<rowItem.size();i++){
-                        if (rowItem.get(i).engname.toLowerCase().contains(charString)){
+                        if (rowItem.get(i).getEngname().toLowerCase().contains(charString)){
 
                             filteredList.add(rowItem.get(i));
-                            Log.d("professor",rowItem.get(i).engname);
+                            Log.d("professor",rowItem.get(i).getEngname());
 
                         }
                     }
@@ -166,7 +164,7 @@ public class RowAdapter extends RecyclerView.Adapter<RowAdapter.itemViewHolder> 
 
     @Override
     public int getItemViewType(int position) {
-        if (rowItem.get(position).type!=null){
+        if (rowItem.get(position).getType()!=null){
             return 1;
         }
         else{

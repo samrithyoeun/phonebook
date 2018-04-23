@@ -4,11 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fluffy.sam.phonebook.MainActivity">
+    android:background="@color/listBgColor"
+    android:padding="16dp"
+    tools:context="com.fluffy.sam.phonebook.MainActivity"
+    android:id="@+id/myConstraintLayout">
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/contactList"
+        android:scrollbars="vertical"
+
     />
 
 
